@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Pricing Rule Console</title>
+        
+        <link href="/css/bootstrap-5.3.2.min.css" rel="stylesheet" />
+
+        <script src="/js/jquery-3.7.1.min.js"></script>
+
+        <link href="/css/style.css" rel="stylesheet" />
+        <script src="/js/ruleconsole.js"></script>
+        <script src="/js/common.js"></script>
+    </head>
+    <body>
+        <!-- header -->
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <span class="navbar-brand">Rule Console</span>
+            </div>
+        </nav>
+
+        <!-- Loader -->
+        <div class="loader-overlay d-none">
+            <div class="spinner-border text-primary" role="status"></div>
+        </div>
+        <!-- content -->
+        <div class="ms-2 me-2 mt-2 rule-content-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>Rule List</h4>
+                <div>
+                <a href="/" class="btn btn-outline-secondary mr-2"> ← Back </a>
+                <button class="btn btn-primary" id="createBtn">+ Create</button>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Rule Type</th>
+                        <th>Value</th>
+                        <th>Priority</th>
+                        <th>Condition</th>
+                        <th>Active</th>
+                        <th width="150">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="itemTable"></tbody>
+            </table>
+        </div>
+
+        <!-- sliding form -->
+        <div class="slide-form" id="itemFormPanel">
+            <h5 id="formTitle">Add Rule</h5>
+            <hr />
+
+            <input type="hidden" id="ruleId" />
+
+            <div class="mb-2">
+                <label class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" maxlength="500"/>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Rule Type</label>
+                <select class="form-select" id="ruleType">
+                    <option value="" selected>--Select--</option>
+                    <option value="percentage discount">Percentage Discount</option>
+                    <option value="flat discount">Flat Discount</option>
+                    <option value="bulk pricing">Bulk Pricing</option>
+                    <option value="category promotion">Category Promotion</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Value</label>
+                <input type="number" id="value" class="form-control" step="0.01" min="0" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Priority</label>
+                <input type="number" id="priority" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Condition</label>
+                <textarea id="condition" class="form-control"></textarea>
+            </div>
+
+            <div class="mb-2 form-check form-switch">
+                <label class="form-check-label" for="switchCheckDefault">Active</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="active" />
+            </div>
+            <button class="btn btn-success" id="saveBtn">Save</button>
+            <button class="btn btn-secondary" id="closeBtn">Cancel</button>
+        </div>
+        <!-- footer -->
+        <footer class="">© 2025 Smart Retail Price Engine App</footer>
+    </body>
+</html>

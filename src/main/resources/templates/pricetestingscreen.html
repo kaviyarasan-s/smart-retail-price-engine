@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Price Testing Screen</title>
+
+        <link href="/css/bootstrap-5.3.2.min.css" rel="stylesheet" />
+
+        <script src="/js/jquery-3.7.1.min.js"></script>
+
+        <link href="/css/style.css" rel="stylesheet" />
+        <script src="/js/pricetestingscreen.js"></script>
+        <script src="/js/common.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <span class="navbar-brand">Price Testing Screen</span>
+            </div>
+        </nav>
+
+        <div class="loader-overlay d-none">
+            <div class="spinner-border text-primary" role="status"></div>
+        </div>
+
+	<div class="ms-2 me-2 mt-4 pricetesting-content-container">
+		<a href="/" class="btn btn-outline-secondary mr-2"> ← Back </a>
+		<div class="container mt-4">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card shadow-sm">
+						<div class="card-header d-flex align-items-center">
+							<h5 class="mb-0">Compute Price</h5>
+						</div>
+						<div class="card-body">
+							<div class="mb-3">
+								<label class="form-label">Product</label> <select
+									class="form-select" id="product"></select>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Quantity</label> <input type="number"
+									id="quantity" class="form-control" />
+							</div>
+							<button class="btn btn-success" id="computeBtn">Compute</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card shadow-sm  d-none" id="computeResultContainer">
+						<div class="card shadow-sm">
+							<div class="card-header d-flex align-items-center">
+								<h5 class="mb-0">Compute Results</h5>
+							</div>
+							<div class="card-body">
+								<div class="mt-2" id="computeResults"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="">© 2025 Smart Retail Price Engine App</footer>
+    </body>
+</html>
