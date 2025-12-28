@@ -1,5 +1,12 @@
 const API_URL = "http://localhost:9091/api/rules/";
 
+const RULE_TYPE_ENUM = {
+	0: "percentage discount",
+	1: "flat discount",
+	2: "bulk pricing",
+	3: "category promotion"
+}
+
 $(document).ready(function () {
     loadRules();
 
@@ -142,10 +149,11 @@ function editRule(id) {
         success: function (item) {
             $("#ruleId").val(item.id);
             $("#name").val(item.name);
-            $("#category").val(item.category);
-            $("#brand").val(item.brand);
-            $("#stockquantity").val(item.stockQuantity);
-            $("#baseprice").val(item.basePrice);
+            $("#ruleType").val(item.ruleType);
+            $("#value").val(item.value);
+            $("#priority").val(item.priority);
+            $("#condition").val(item.condition);
+            $("#active").prop("checked", item.isActive == "Y");
             $("#formTitle").text("Edit Rule");
             openForm();
         },
@@ -181,6 +189,7 @@ function closeForm() {
 
 function clearForm() {
     $("#ruleId").val("");
+    $("#name").val("");
     $("#ruleType").val("");
     $("#value").val(0);
     $("#priority").val(0);

@@ -26,5 +26,14 @@ public enum RuleType {
 		public String toString() {
 			return "category promotion";
 		}
+	};
+
+	public static RuleType fromString(String value) {
+		for (RuleType type : RuleType.values()) {
+			if (type.toString().equalsIgnoreCase(value)) {
+				return type;
+			}
+		}
+		throw new IllegalArgumentException("Invalid RuleType: " + value);
 	}
 }

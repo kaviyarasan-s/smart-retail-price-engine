@@ -51,7 +51,7 @@ public class PriceEngineService {
 		for (PricingRuleDTO pricingRuleDTO : pricingRuleDTOs) {
 			// using factory pattern, getting the appropriate processor
 			RuleProcessor ruleProcessor = RuleProcessorFactory
-					.getRuleProcessor(RuleType.valueOf(pricingRuleDTO.ruleType()));
+					.getRuleProcessor(RuleType.fromString(pricingRuleDTO.ruleType()));
 			// Based on the rule, it apply the pricing calculation
 			PricingRuleProcessor pricingRuleProcessor = new PricingRuleProcessor(ruleProcessor);
 			pricingRuleProcessor.calculatePrice(productPrice, pricingRuleDTO.conditionJson(), pricingRuleDTO.value());
