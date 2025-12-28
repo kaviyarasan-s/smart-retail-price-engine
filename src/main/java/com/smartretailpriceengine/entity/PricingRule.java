@@ -31,8 +31,6 @@ public class PricingRule {
 	private String name;
 
 	@Enumerated
-	// @RuleTypeEnumValid(message = "Rule type should be in {percentage discount,
-	// flat discount, bulk pricing, category promotion}")
 	private RuleType ruleType;
 
 	@Min(value = 0, message = "Value should not be negative")

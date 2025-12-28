@@ -20,8 +20,4 @@ public final class Utility {
 		return zonedDateTime.format(formatter);
 	}
 
-	public static void main(String[] args) {
-		// Utility test
-		System.out.println(convertMillisToTimeStamp(System.currentTimeMillis()));
-	}
 }
