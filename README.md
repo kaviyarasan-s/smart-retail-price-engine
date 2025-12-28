@@ -1,7 +1,10 @@
 ## Steps to run:
-Step 1: Pull the project and update the pom.xml file. \n
-Step 2: Configure the MySQL database in the application.properties file. \n
-Step 3: Start the Spring Boot application. \n
+Step 1: Pull the project and update the pom.xml file.
+
+Step 2: Configure the MySQL database in the application.properties file.
+
+Step 3: Start the Spring Boot application.
+
 Step 4: Access the application using the specified port, for example:
 http://localhost:9091/
 
