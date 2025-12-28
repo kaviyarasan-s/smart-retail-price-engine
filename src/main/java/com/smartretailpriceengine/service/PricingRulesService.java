@@ -46,6 +46,15 @@ public class PricingRulesService {
 		return pricingRuleDTOs;
 	}
 
+	public List<PricingRuleDTO> findAllActiveRules() {
+		List<PricingRule> pricingRules = repository.findAllActiveRules();
+		List<PricingRuleDTO> pricingRuleDTOs = new ArrayList<>();
+		for (PricingRule pricingRule : pricingRules) {
+			pricingRuleDTOs.add(transformPricingRuleToPricingRuleDTO(pricingRule));
+		}
+		return pricingRuleDTOs;
+	}
+
 	public PricingRuleDTO save(PricingRule pricingRule) {
 		PricingRule persistedPricingRule = repository.save(pricingRule);
 		return transformPricingRuleToPricingRuleDTO(persistedPricingRule);

@@ -45,7 +45,7 @@ public class PriceEngineService {
 		productPrice.setQuantity(quantity);
 		productPrice.setCategory(productDTO.category());
 		// fetch pricing rules ordered with priority
-		List<PricingRuleDTO> pricingRuleDTOs = pricingRulesService.findAll();
+		List<PricingRuleDTO> pricingRuleDTOs = pricingRulesService.findAllActiveRules();
 		// iterate and apply each rule with respective rule processor
 		// applying chain of responsibility pattern
 		for (PricingRuleDTO pricingRuleDTO : pricingRuleDTOs) {

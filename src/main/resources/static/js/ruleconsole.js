@@ -152,7 +152,7 @@ function editRule(id) {
             $("#ruleType").val(item.ruleType);
             $("#value").val(item.value);
             $("#priority").val(item.priority);
-            $("#condition").val(item.condition);
+            $("#condition").val(item.conditionJson);
             $("#active").prop("checked", item.isActive == "Y");
             $("#formTitle").text("Edit Rule");
             openForm();
